@@ -209,8 +209,8 @@ class GpaCalculator
 		until does_user_say_no user_input
 			
 			user_input = gets.chomp
-			inputProcessor = GradeProcessor.new
-			task = inputProcessor.return_first_part user_input	
+			grade_processor = GradeProcessor.new
+			task = grade_processor.return_first_part user_input	
 			if (!task.nil?)	
 				if (!task[1].nil?)
 				g.addEdge(Integer(task[0]), Integer(task[1]))
