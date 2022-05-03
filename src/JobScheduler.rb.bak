@@ -218,7 +218,9 @@ class JobSchedular
 			g.printGraph()
 			g.topologicalSort()
 
+
 	end
+
 
 	def run_job
 		@gpa =  get_user_job_stucture_input 
