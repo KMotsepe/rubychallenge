@@ -187,21 +187,17 @@ class Graph
 
 end
 
-class GpaCalculator
-
-
+class JobSchedular
 
 	def initialize
 
 	end
 
-
 	def does_user_say_no question
-
 		question == "stop"
-
 	end
-	def get_user_grade_and_add_all
+	
+	def get_user_job_stucture_input
 
 		user_input = ""
 		g = Graph.new(6)
@@ -209,8 +205,8 @@ class GpaCalculator
 		until does_user_say_no user_input
 			
 			user_input = gets.chomp
-			inputProcessor = GradeProcessor.new
-			task = inputProcessor.return_first_part user_input	
+			inputProcessor = InputProcessor.new
+			task = inputProcessor.return_arr_pair user_input	
 			if (!task.nil?)	
 				if (!task[1].nil?)
 				g.addEdge(Integer(task[0]), Integer(task[1]))
@@ -218,7 +214,6 @@ class GpaCalculator
 				g.addEdge(Integer(task[0]))
 				end 
 			end
-		 # @data.tsort
 
 		end
 			#  Print graph element
@@ -229,9 +224,9 @@ class GpaCalculator
 	end
 
 
-	def calculate_gpa
+	def run_job
 
-		@gpa =  get_user_grade_and_add_all 
+		@gpa =  get_user_job_stucture_input 
 		@gpa
 
 	end

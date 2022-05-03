@@ -1,4 +1,4 @@
 require_relative 'require_all.rb'
 #--------------------------------#
-calculator = GpaCalculator.new
-puts calculator.calculate_gpa
+jobSchedular = JobSchedular.new
+puts jobSchedular.run_job
